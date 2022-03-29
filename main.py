@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-DB_FILE = "./data/db.json"
+DB_FILE = "./db.json"
 db = open(DB_FILE, "rb")
 data = json.load(db)
 messages = data["messages"]
@@ -39,7 +39,7 @@ def get_messages():
     return{"messages": messages}
 
 #показать форму чату
-@app.route('/form')
+@app.route('./form')
 def form():
     return render_template('form.html')
 
